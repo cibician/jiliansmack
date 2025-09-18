@@ -1,2 +1,2 @@
-# jiliansmack
-Website project
+# Smilian Jack Cibic
+About
