@@ -42,21 +42,3 @@
   </footer>
 </body>
 </html>
-(Optional) Add a stylesheet
-
-Add file → Create new file → name style.css
-
-Paste this if you want a bit more control later:
-
-css
-Copy code
-:root { --max: 980px; --pad: 24px; }
-* { box-sizing: border-box; }
-body { margin:0; background:#0f0f0f; color:#ececec; font:16px/1.6 Inter, system-ui, sans-serif; }
-header, main, footer { max-width:var(--max); margin:0 auto; padding:var(--pad); }
-h1 { font-weight:700; letter-spacing:0.2px; }
-.grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); }
-.card { background:#161616; border:1px solid #222; border-radius:16px; padding:12px; }
-.card img { width:100%; display:block; border-radius:12px; }
-a { color:#ffd166; }
-a:hover { text-decoration:underline; }
