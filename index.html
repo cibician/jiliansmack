@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smilian Jack Cibic</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* fallback if style.css missing */
+    :root { --max: 980px; }
+    body { margin:0; font:16px/1.5 system-ui, sans-serif; background:#111; color:#eee; }
+    header, main, footer { max-width:var(--max); margin:0 auto; padding:24px; }
+    a { color:#ffd166; text-decoration:none; }
+    .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+    .card { background:#1a1a1a; padding:10px; border-radius:14px; }
+    .card img { width:100%; height:auto; display:block; border-radius:10px; }
+    .title { font-size:24px; margin:0 0 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title">Smilian Jack Cibic</h1>
+    <p>Designer / AV — selected gifs & loops.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- Drop your GIFs in /img and add entries like these -->
+      <figure class="card">
+        <img src="img/loop-01.gif" alt="Loop 01" loading="lazy">
+        <figcaption>Loop 01 — 2025</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="img/loop-02.gif" alt="Loop 02" loading="lazy">
+        <figcaption>Loop 02 — 2025</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <footer>
+    <p>Contact: <a href="mailto:hello@smilianjackcibic.com">hello@smilianjackcibic.com</a> · ©</p>
+  </footer>
+</body>
+</html>
+(Optional) Add a stylesheet
+
+Add file → Create new file → name style.css
+
+Paste this if you want a bit more control later:
+
+css
+Copy code
+:root { --max: 980px; --pad: 24px; }
+* { box-sizing: border-box; }
+body { margin:0; background:#0f0f0f; color:#ececec; font:16px/1.6 Inter, system-ui, sans-serif; }
+header, main, footer { max-width:var(--max); margin:0 auto; padding:var(--pad); }
+h1 { font-weight:700; letter-spacing:0.2px; }
+.grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); }
+.card { background:#161616; border:1px solid #222; border-radius:16px; padding:12px; }
+.card img { width:100%; display:block; border-radius:12px; }
+a { color:#ffd166; }
+a:hover { text-decoration:underline; }
