@@ -1,0 +1,167 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Layout container */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left navigation column - 1/4 of page width */
+.nav-column {
+    width: 25%;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Right content area - 3/4 of page width */
+.content-column {
+    width: 75%;
+    margin-left: 25%;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+/* Navigation styles */
+.site-title {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 30px 20px 20px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.nav-menu li {
+    margin-bottom: 15px;
+}
+
+.nav-menu a {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #333;
+}
+
+.nav-menu a.active {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Content area styles */
+.main-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* Grid layout for multiple images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-grid .caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .nav-column {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    
+    .content-column {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .site-title {
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+/* Page content styles */
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.page-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+

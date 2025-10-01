@@ -1,44 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Smilian Jack Cibic</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* fallback if style.css missing */
-    :root { --max: 980px; }
-    body { margin:0; font:16px/1.5 system-ui, sans-serif; background:#111; color:#eee; }
-    header, main, footer { max-width:var(--max); margin:0 auto; padding:24px; }
-    a { color:#ffd166; text-decoration:none; }
-    .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
-    .card { background:#1a1a1a; padding:10px; border-radius:14px; }
-    .card img { width:100%; height:auto; display:block; border-radius:10px; }
-    .title { font-size:24px; margin:0 0 6px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smilian Jack Cibic</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1 class="title">Smilian Jack Cibic</h1>
-    <p>Designer / AV — selected gifs & loops.</p>
-  </header>
+    <div class="container">
+        <!-- Left Navigation Column -->
+        <nav class="nav-column">
+            <h1 class="site-title">SMILIAN JACK CIBIC</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="music/index.html">Music</a></li>
+                <li><a href="animation/index.html">Animation</a></li>
+                <li><a href="drawing/index.html">Drawing</a></li>
+                <li><a href="other-work/index.html">Other Work</a></li>
+                <li><a href="about/index.html">About</a></li>
+            </ul>
+        </nav>
 
-  <main>
-    <div class="grid">
-      <!-- Drop your GIFs in /img and add entries like these -->
-      <figure class="card">
-        <img src="img/loop-01.gif" alt="Loop 01" loading="lazy">
-        <figcaption>Loop 01 — 2025</figcaption>
-      </figure>
-      <figure class="card">
-        <img src="img/loop-02.gif" alt="Loop 02" loading="lazy">
-        <figcaption>Loop 02 — 2025</figcaption>
-      </figure>
+        <!-- Right Content Column -->
+        <main class="content-column">
+            <div class="page-content">
+                <img src="img/loop-02.gif" alt="Main Image" class="main-image">
+                <p class="image-caption">Caption for the main image</p>
+            </div>
+        </main>
     </div>
-  </main>
-
-  <footer>
-    <p>Contact: <a href="mailto:hello@smilianjackcibic.com">hello@smilianjackcibic.com</a> · ©</p>
-  </footer>
 </body>
 </html>
