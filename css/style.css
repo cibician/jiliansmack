@@ -45,6 +45,17 @@ body {
     margin-bottom: 30px;
     color: #ff0000;
     text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.site-title a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    text-decoration: none;
 }
 
 .nav-menu {
@@ -88,9 +99,7 @@ body {
     height: 400px;
     display: block;
     margin: 0 0 10px 0;
-    background-color: #f0f0f0;
     object-fit: cover;
-    border: 1px solid #ddd;
 }
 
 .image-caption {
@@ -117,9 +126,7 @@ body {
     width: 100%;
     height: auto;
     max-height: 300px;
-    background-color: #f0f0f0;
     object-fit: contain;
-    border: 1px solid #ddd;
     margin-bottom: 10px;
 }
 
