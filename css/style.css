@@ -33,7 +33,7 @@ body {
 .content-column {
     width: 75%;
     margin-left: 25%;
-    padding: 40px;
+    padding: 40px 60px 40px 40px;
     background-color: #ffffff;
 }
 
@@ -137,7 +137,7 @@ body {
 .image-grid img {
     width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 400px;
     object-fit: contain;
     margin-bottom: 5px;
 }
