@@ -198,3 +198,12 @@ body {
     line-height: 1.5;
 }
 
+.page-description a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.page-description a:hover {
+    text-decoration: underline;
+}
+
