@@ -1,17 +1,4 @@
-/* Medieval fridge landing page styles */
-:root {
-    --stone-light: #d7d4cd;
-    --stone-mid: #b1aca1;
-    --stone-deep: #7b746a;
-    --highlight: #a07952;
-    --glow: rgba(187, 224, 255, 0.6);
-    --text-main: #e6e2da;
-    --text-accent: #c9b8a0;
-    --bg-dark: #1d1b1a;
-    --shadow: rgba(0, 0, 0, 0.35);
-    --door-speed: 1.2s;
-}
-
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,390 +6,204 @@
 }
 
 body {
-    font-family: 'Cinzel', 'IM Fell English SC', serif;
-    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03), transparent 35%),
-        radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.04), transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.03), transparent 25%),
-        #12100f;
-    color: var(--text-main);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* Layout container */
+.container {
+    display: flex;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
 }
 
-.page-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    padding: 32px 24px 48px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-}
-
-.masthead {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 22px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: linear-gradient(145deg, rgba(65, 61, 55, 0.65), rgba(29, 27, 26, 0.85));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 32px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(2px);
-}
-
-.brand-mark {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.brand-name {
-    font-family: 'IM Fell English SC', serif;
-    font-size: clamp(26px, 4vw, 36px);
-    letter-spacing: 1px;
-}
-
-.brand-tag {
-    font-size: 14px;
-    color: var(--text-accent);
-    opacity: 0.85;
-}
-
-.site-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    font-size: 14px;
-}
-
-.site-nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    padding: 6px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.15));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    transition: all 0.25s ease;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 12px rgba(187, 224, 255, 0.35);
-}
-
-.scene {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+/* Left navigation column - 1/4 of page width */
+.nav-column {
+    width: 25%;
+    background-color: #ffffff;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
     padding: 20px;
 }
 
-.fridge {
-    position: relative;
-    width: min(900px, 90vw);
-    height: min(640px, 70vh);
-    min-height: 480px;
-    perspective: 1600px;
-    filter: drop-shadow(0 18px 40px var(--shadow));
-    transition: transform 0.8s ease;
+/* Right content area - 3/4 of page width */
+.content-column {
+    width: 75%;
+    margin-left: 25%;
+    padding: 40px 60px 40px 40px;
+    background-color: #ffffff;
 }
 
-.fridge:hover {
-    transform: translateY(-4px);
+/* Navigation styles */
+.site-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #ff0000;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.fridge-body {
+.site-title a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 8px;
+}
+
+.nav-menu a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    color: #ff0000;
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
     position: relative;
+}
+
+.nav-menu a::before {
+    content: '→ ';
+    margin-right: 5px;
+    color: #ff0000;
+}
+
+.nav-menu a:hover {
+    font-weight: 600;
+}
+
+.nav-menu a.active {
+    font-weight: bold;
+}
+
+/* Content area styles */
+.main-image {
     width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #c6c1b8, #a8a094 30%, #8e857a 65%, #7b736a);
-    border: 2px solid rgba(255, 255, 255, 0.12);
-    box-shadow: inset 0 4px 12px rgba(255, 255, 255, 0.25), inset 0 -8px 24px rgba(0, 0, 0, 0.25);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 0 10px 0;
+    object-fit: contain;
 }
 
-.fridge-crown,
-.fridge-base,
-.fridge-top-crest {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, #c3bcad, #8c8478 60%, #756c62);
-    border: 2px solid rgba(255, 255, 255, 0.18);
-    box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.25), inset 0 -3px 8px rgba(0, 0, 0, 0.3), 0 8px 18px rgba(0, 0, 0, 0.38);
-    z-index: 3;
+.image-caption {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #ff0000;
+    font-style: italic;
+    text-align: center;
+    margin: 5px 0 20px 0;
 }
 
-.fridge-crown {
-    top: -26px;
-    width: 92%;
-    height: 26px;
-    border-radius: 8px 8px 2px 2px;
+/* Video embed styles */
+.video-embed {
+    width: 100%;
+    max-width: 100%;
+    height: 315px;
+    margin: 20px 0 10px 0;
+    border: none;
 }
 
-.fridge-base {
-    bottom: -28px;
-    width: 88%;
-    height: 32px;
-    border-radius: 2px 2px 10px 10px;
-}
-
-.fridge-top-crest {
-    top: -52px;
-    width: 82px;
-    height: 52px;
-    border-radius: 52% 52% 15% 15%;
+/* Grid layout for multiple images */
+.image-grid {
     display: grid;
-    place-items: center;
-    background: radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.4), transparent 50%),
-        linear-gradient(135deg, #b7afa0, #8a8175 70%);
-    box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.3), inset 0 -6px 8px rgba(0, 0, 0, 0.35), 0 8px 26px rgba(0, 0, 0, 0.45);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.crest-emblem {
-    font-size: 24px;
-    color: var(--highlight);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.fridge-interior {
-    position: absolute;
-    inset: 12px;
-    background: radial-gradient(ellipse at 50% 20%, rgba(210, 236, 255, 0.45), rgba(124, 169, 201, 0.15) 45%, rgba(63, 86, 106, 0.08) 70%, rgba(0, 0, 0, 0.25));
-    border-radius: 10px;
-    box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-}
-
-.interior-glow {
-    position: absolute;
-    inset: 6px;
-    background: radial-gradient(circle at 50% 20%, rgba(219, 246, 255, 0.55), transparent 45%),
-        radial-gradient(circle at 50% 60%, rgba(150, 200, 232, 0.25), transparent 45%);
-    filter: blur(14px);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.shelf {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 16px;
-    align-items: flex-end;
-    padding: 26px 24px 34px;
-}
-
-.shelf::after {
-    content: '';
-    position: absolute;
-    left: 8%;
-    right: 8%;
-    bottom: 8px;
-    height: 8px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
-    border-radius: 10px;
-    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.35);
-}
-
-.fridge-item {
+.image-grid > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #f3f7ff;
-    position: relative;
-    transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
 }
 
-.fridge-item img {
+.image-grid img {
     width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
-    background: rgba(255, 255, 255, 0.12);
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 5px;
 }
 
-.fridge-item .item-label {
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.fridge-item:hover,
-.fridge-item:focus-visible {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 0 20px rgba(187, 224, 255, 0.45);
-    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
-}
-
-.door {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background: linear-gradient(120deg, rgba(215, 211, 205, 0.9), rgba(135, 125, 116, 0.9) 55%, rgba(98, 91, 82, 0.95));
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.35), inset 0 -12px 26px rgba(0, 0, 0, 0.25), 0 20px 48px rgba(0, 0, 0, 0.55);
-    transform-style: preserve-3d;
-    transition: transform var(--door-speed) ease-in-out;
-    transform-origin: center;
-    z-index: 5;
-}
-
-.left-door {
-    left: 0;
-    border-right: 1px solid rgba(0, 0, 0, 0.35);
-    transform-origin: 100% 50%;
-}
-
-.right-door {
-    right: 0;
-    border-left: 1px solid rgba(0, 0, 0, 0.35);
-    transform-origin: 0% 50%;
-}
-
-.door-engraving {
-    position: absolute;
-    inset: 12% 10%;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.35);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 8px 18px rgba(0, 0, 0, 0.25);
-    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.08), transparent 45%),
-        rgba(0, 0, 0, 0.06);
-}
-
-.stone-panel {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1), transparent 35%),
-        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1), transparent 40%),
-        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03) 6px, rgba(255, 255, 255, 0.02) 6px, rgba(255, 255, 255, 0.02) 12px);
-    mix-blend-mode: multiply;
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.stone-handle {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45), rgba(138, 126, 115, 0.95)),
-        linear-gradient(135deg, rgba(0, 0, 0, 0.45), rgba(255, 255, 255, 0.1));
-    box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.25), inset 0 -3px 8px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.45);
-    cursor: pointer;
-    z-index: 6;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.stone-handle:hover,
-.stone-handle:focus-visible {
-    transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 0 0 14px rgba(187, 224, 255, 0.45), inset 0 2px 8px rgba(255, 255, 255, 0.35);
-    outline: none;
-}
-
-.fridge.open .left-door {
-    transform: rotateY(-112deg);
-}
-
-.fridge.open .right-door {
-    transform: rotateY(112deg);
-}
-
-.fridge.closed .left-door,
-.fridge.closed .right-door {
-    transform: rotateY(0deg);
-}
-
-.fridge-base::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 12%;
-    right: 12%;
-    height: 12px;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.35), transparent 65%);
-    filter: blur(6px);
-    z-index: -1;
-}
-
-.instruction {
+.image-grid .caption {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #ff0000;
+    font-style: italic;
     text-align: center;
-    color: var(--text-accent);
-    font-size: 14px;
-    letter-spacing: 0.4px;
-    opacity: 0.85;
+    margin-top: 5px;
+    width: 100%;
 }
 
-@media (max-width: 900px) {
-    .fridge {
-        height: 64vh;
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
     }
-    .shelf {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        padding: 20px 18px 28px;
-    }
-    .fridge-item img {
-        height: 110px;
-    }
-}
-
-@media (max-width: 640px) {
-    body {
-        padding: 0;
-    }
-    .page-wrapper {
-        padding: 20px 14px 32px;
-    }
-    .masthead {
-        gap: 12px;
-    }
-    .site-nav {
-        gap: 8px;
-        font-size: 12px;
-    }
-    .fridge {
+    
+    .nav-column {
         width: 100%;
-        height: 58vh;
-        min-height: 420px;
+        position: relative;
+        height: auto;
     }
-    .stone-handle {
-        width: 46px;
-        height: 46px;
+    
+    .content-column {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
     }
-    .fridge-item img {
-        height: 96px;
+    
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .site-title {
+        font-size: 20px;
+        padding: 20px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .door,
-    .fridge,
-    .stone-handle,
-    .fridge-item {
-        transition: none !important;
-    }
+/* Page content styles */
+.page-content {
+    max-width: 100%;
 }
+
+.page-title {
+    display: none;
+}
+
+.page-description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #ff0000;
+    font-style: italic;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.page-description a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.page-description a:hover {
+    text-decoration: underline;
+}
+
