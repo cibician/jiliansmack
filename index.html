@@ -3,93 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smilian Jack Cibic | Portfolio Fridge</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <title>Smilian Jack Cibic</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="page-wrapper">
-        <header class="masthead">
-            <div class="brand-mark">
-                <h1 class="brand-name">Smilian Jack Cibic</h1>
-                <p class="brand-tag">folio preserved in stone &amp; ice</p>
-            </div>
-            <nav class="site-nav" aria-label="Primary">
-                <a href="music/index.html">Music</a>
-                <a href="animation/index.html">Animation</a>
-                <a href="drawing/index.html">Drawing</a>
-                <a href="other-work/index.html">Other Work</a>
-                <a href="about/index.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+    <div class="container">
+        <!-- Left Navigation Column -->
+        <nav class="nav-column">
+            <h1 class="site-title"><a href="index.html">Smilian Jack Cibic</a></h1>
+            <ul class="nav-menu">
+                <li><a href="music/index.html">music</a></li>
+                <li><a href="animation/index.html">animation</a></li>
+                <li><a href="drawing/index.html">drawing</a></li>
+                <li><a href="other-work/index.html">other work</a></li>
+                <li><a href="about/index.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
 
-        <main class="scene" aria-label="Portfolio fridge">
-            <div class="fridge closed" aria-live="polite">
-                <div class="fridge-top-crest" aria-hidden="true">
-                    <span class="crest-emblem">✠</span>
-                </div>
-                <div class="fridge-crown" aria-hidden="true"></div>
-                <div class="fridge-body">
-                    <div class="fridge-interior">
-                        <div class="interior-glow"></div>
-                        <div class="shelf" aria-label="Top shelf">
-                            <!-- Replace the src/href below with your project images and links -->
-                            <a class="fridge-item" href="animation/index.html">
-                                <img src="img/loop-01.gif" alt="Animation loop preview">
-                                <span class="item-label">Animation</span>
-                            </a>
-                            <a class="fridge-item" href="music/index.html">
-                                <img src="img/a4256224461_10.jpg" alt="Music artwork">
-                                <span class="item-label">Music</span>
-                            </a>
-                        </div>
-                        <div class="shelf" aria-label="Middle shelf">
-                            <!-- Swap these placeholders for portfolio pieces -->
-                            <a class="fridge-item" href="drawing/index.html">
-                                <img src="img/Passo_still.png" alt="Illustration preview">
-                                <span class="item-label">Drawing</span>
-                            </a>
-                            <a class="fridge-item" href="other-work/index.html">
-                                <img src="img/Costeene_Screen.png" alt="Other work preview">
-                                <span class="item-label">Other Work</span>
-                            </a>
-                            <a class="fridge-item" href="about/index.html">
-                                <img src="img/Red_pig.png" alt="About the artist">
-                                <span class="item-label">About</span>
-                            </a>
-                        </div>
-                        <div class="shelf" aria-label="Bottom shelf">
-                            <!-- Update these items with more project thumbnails -->
-                            <a class="fridge-item" href="contact.html">
-                                <img src="img/APPLE_KEYS.jpg" alt="Contact preview">
-                                <span class="item-label">Contact</span>
-                            </a>
-                            <a class="fridge-item" href="music/index.html">
-                                <img src="img/How_to_dance.JPG" alt="Live performance still">
-                                <span class="item-label">Live</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="door left-door" aria-hidden="true">
-                        <div class="door-engraving"></div>
-                        <div class="stone-panel"></div>
-                    </div>
-                    <div class="door right-door" aria-hidden="true">
-                        <div class="door-engraving"></div>
-                        <div class="stone-panel"></div>
-                    </div>
-
-                    <button class="stone-handle" type="button" aria-label="Toggle fridge doors" aria-expanded="false"></button>
-                </div>
-                <div class="fridge-base" aria-hidden="true"></div>
+        <!-- Right Content Column -->
+        <main class="content-column">
+            <h1 class="page-title">Page Content</h1>
+            <div class="page-content">
+                <img src="img/Red_pig.png" alt="Main Image" class="main-image">
+                <p class="image-caption">my archetypal piggy</p>
             </div>
         </main>
-        <p class="instruction">Tap the stone handle to close or reopen the vault.</p>
     </div>
-    <script src="script.js" defer></script>
 </body>
 </html>
