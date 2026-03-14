@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicatoni drawings, sketches and graphics - Smilian Jack Cibic</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; cursor: pointer; align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; }
+        .lightbox-overlay.open { display: flex; }
+        .lightbox-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,21 +30,34 @@
         <main class="content-column">
             <div class="page-content">
                 <h1 class="page-title">Delicatoni drawings, sketches and graphics</h1>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
-                    <img src="../../img/Red_pig.png" alt="Red pig" style="width: 100%; display: block;">
-                    <img src="../../img/Drawings_skecthes_WEB.png" alt="Drawings sketches" style="width: 100%; display: block;">
-                    <img src="../../img/DELICATONI_symbols_RED.png" alt="Delicatoni symbols" style="width: 100%; display: block;">
-                    <img src="../../img/MAG_PO.png" alt="MAG PO" style="width: 100%; display: block;">
-                    <img src="../../img/DELICASTORI.png" alt="Delicastori" style="width: 100%; display: block;">
-                    <img src="../../img/Delicamondo.png" alt="Delicamondo" style="width: 100%; display: block;">
-                    <img src="../../img/RENDERTOURPOST.png" alt="Tour poster render" style="width: 100%; display: block;">
-                    <img src="../../img/RENDERTOURPOST4.png" alt="Tour poster render 4" style="width: 100%; display: block;">
-                    <img src="../../img/BOBO_web.png" alt="BOBO" style="width: 100%; display: block;">
-                    <img src="../../img/locandina covo.JPEG" alt="Locandina covo" style="width: 100%; display: block;">
-                    <img src="../../img/Copia di FRONTE COPERTINA.jpg" alt="Fronte copertina" style="width: 100%; display: block;">
-                    <img src="../../img/inner_page_A.png" alt="Inner page A" style="width: 100%; display: block;">
-                    <img src="../../img/inner_page_B.png" alt="Inner page B" style="width: 100%; display: block;">
+                <div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('open'); this.setAttribute('aria-hidden','true');" aria-hidden="true">
+                    <img src="" alt="" id="lightbox-img">
                 </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+                    <img src="../../img/Red_pig.png" alt="Red pig" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/Drawings_skecthes_WEB.png" alt="Drawings sketches" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/DELICATONI_symbols_RED.png" alt="Delicatoni symbols" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/MAG_PO.png" alt="MAG PO" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/DELICASTORI.png" alt="Delicastori" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/Delicamondo.png" alt="Delicamondo" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/RENDERTOURPOST.png" alt="Tour poster render" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/RENDERTOURPOST4.png" alt="Tour poster render 4" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/BOBO_web.png" alt="BOBO" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/locandina covo.JPEG" alt="Locandina covo" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/Copia di FRONTE COPERTINA.jpg" alt="Fronte copertina" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/inner_page_A.png" alt="Inner page A" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                    <img src="../../img/inner_page_B.png" alt="Inner page B" style="width: 100%; display: block; cursor: pointer;" onclick="openLightbox(this)">
+                </div>
+                <script>
+                    function openLightbox(img) {
+                        var lb = document.getElementById('lightbox');
+                        var lbImg = document.getElementById('lightbox-img');
+                        lbImg.src = img.src;
+                        lbImg.alt = img.alt;
+                        lb.classList.add('open');
+                        lb.setAttribute('aria-hidden', 'false');
+                    }
+                </script>
             </div>
         </main>
     </div>
