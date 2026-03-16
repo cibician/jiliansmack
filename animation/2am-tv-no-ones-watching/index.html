@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2am TV No Ones Watching - Smilian Jack Cibic</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <style>.lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; cursor: pointer; align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; }.lightbox-overlay.open { display: flex; }.lightbox-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }</style>
 </head>
 <body>
     <div class="container">
@@ -25,7 +26,9 @@
         <main class="content-column">
             <div class="page-content">
                 <h1 class="page-title">2am TV No Ones Watching</h1>
-                <img src="../../img/2AM_TV.png" alt="2am TV No Ones Watching" class="main-image">
+                <div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('open'); this.setAttribute('aria-hidden','true');" aria-hidden="true"><img src="" alt="" id="lightbox-img"></div>
+                <iframe src="https://player.vimeo.com/video/526356411?h=d2e7c4b4b8" class="video-embed" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <img src="../../img/2AM_TV.png" alt="2am TV No Ones Watching" class="main-image" style="cursor: pointer;" onclick="openLightbox(this)">
                 <p class="image-caption">An animation made at Goldsmiths University about our (my) toxic relationship with screens. Do our devices love us as much as we love them?
 
                     “Lovely human,
@@ -41,8 +44,8 @@
                     and I'll sing this again
                     
                     at 2.30 AM”</p>
-                <iframe src="https://player.vimeo.com/video/526356411?h=d2e7c4b4b8" class="video-embed" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <script>function openLightbox(img){var lb=document.getElementById('lightbox');var lbImg=document.getElementById('lightbox-img');lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');lb.setAttribute('aria-hidden','false');}</script>
         </main>
     </div>
 </body>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passo Dopo Passo - Smilian Jack Cibic</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <style>.lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; cursor: pointer; align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; }.lightbox-overlay.open { display: flex; }.lightbox-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }</style>
 </head>
 <body>
     <div class="container">
@@ -25,6 +26,8 @@
         <main class="content-column">
             <div class="page-content">
                 <h1 class="page-title">Passo Dopo Passo</h1>
+                <div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('open'); this.setAttribute('aria-hidden','true');" aria-hidden="true"><img src="" alt="" id="lightbox-img"></div>
+                <iframe src="https://www.youtube.com/embed/0S3dSuCD9NY" class="video-embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <p class="page-description">
                     "To us Passo dopo Passo is a playful song meant to feel 'more human' in the big city. It's like a mystical walk moved by dreams and imagination, that tries to look beyond the stress and distractions of every day and feel united."
                 </p>
@@ -54,11 +57,9 @@
                             che ci sia qualcosa in più
                         </p>
                     </div>
-                    <img src="../../img/Passo_still.png" alt="Passo Dopo Passo still" style="flex: 0 1 auto; max-width: 50%;">
+                    <img src="../../img/Passo_still.png" alt="Passo Dopo Passo still" style="flex: 0 1 auto; max-width: 50%; cursor: pointer;" onclick="openLightbox(this)">
                 </div>
 
-                <iframe src="https://www.youtube.com/embed/0S3dSuCD9NY" class="video-embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                
                 <p class="page-description" style="margin-top: 30px;">
                     a Delicavision & Agenzia Simpatia production<br><br>
                     
@@ -76,11 +77,12 @@
 
                 <h2 class="page-description" style="margin-top: 40px; font-weight: bold;">Storyboard for Passo Dopo Passo</h2>
                 
-                <img src="../../img/page 1.png" alt="Storyboard Page 1" style="width: 100%; margin: 20px 0;">
-                <img src="../../img/page 2-3.png" alt="Storyboard Page 2-3" style="width: 100%; margin: 20px 0;">
-                <img src="../../img/page 4-5.png" alt="Storyboard Page 4-5" style="width: 100%; margin: 20px 0;">
-                <img src="../../img/page 6-7.png" alt="Storyboard Page 6-7" style="width: 100%; margin: 20px 0;">
+                <img src="../../img/page 1.png" alt="Storyboard Page 1" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
+                <img src="../../img/page 2-3.png" alt="Storyboard Page 2-3" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
+                <img src="../../img/page 4-5.png" alt="Storyboard Page 4-5" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
+                <img src="../../img/page 6-7.png" alt="Storyboard Page 6-7" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
             </div>
+            <script>function openLightbox(img){var lb=document.getElementById('lightbox');var lbImg=document.getElementById('lightbox-img');lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');lb.setAttribute('aria-hidden','false');}</script>
         </main>
     </div>
 </body>

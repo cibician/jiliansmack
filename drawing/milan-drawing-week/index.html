@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milan Drawing Week - Smilian Jack Cibic</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <style>.lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; cursor: pointer; align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; }.lightbox-overlay.open { display: flex; }.lightbox-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }</style>
 </head>
 <body>
     <div class="container">
@@ -25,15 +26,16 @@
         <main class="content-column">
             <div class="page-content">
                 <h1 class="page-title">Milan Drawing Week</h1>
+                <div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('open'); this.setAttribute('aria-hidden','true');" aria-hidden="true"><img src="" alt="" id="lightbox-img"></div>
                 <p class="page-description">
                     In 2023, I was asked to create the drawings for the identity of Milan Drawing Week, a city-wide festival dedicated to contemporary drawing, bringing together galleries, museums, and independent spaces across Milan to celebrate the language of drawing in all its forms.
                 </p>
-                
-                <img src="../../img/MDW1.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0;">
-                <img src="../../img/MDW2.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0;">
-                <img src="../../img/MDW3.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0;">
-                <img src="../../img/MDW4.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0;">
+                <img src="../../img/MDW1.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
+                <img src="../../img/MDW2.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
+                <img src="../../img/MDW3.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
+                <img src="../../img/MDW4.png" alt="Milan Drawing Week" style="width: 100%; margin: 20px 0; cursor: pointer;" onclick="openLightbox(this)">
             </div>
+            <script>function openLightbox(img){var lb=document.getElementById('lightbox');var lbImg=document.getElementById('lightbox-img');lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');lb.setAttribute('aria-hidden','false');}</script>
         </main>
     </div>
 </body>

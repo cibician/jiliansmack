@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Dance Confidently - Smilian Jack Cibic</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <style>.lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; cursor: pointer; align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; }.lightbox-overlay.open { display: flex; }.lightbox-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; pointer-events: none; }</style>
 </head>
 <body>
     <div class="container">
@@ -25,7 +26,9 @@
         <main class="content-column">
             <div class="page-content">
                 <h1 class="page-title">How to Dance Confidently</h1>
-                <img src="../../img/How_to_dance2.JPG" alt="How to Dance Confidently" class="main-image">
+                <div id="lightbox" class="lightbox-overlay" onclick="this.classList.remove('open'); this.setAttribute('aria-hidden','true');" aria-hidden="true"><img src="" alt="" id="lightbox-img"></div>
+                <iframe src="https://www.youtube.com/embed/BfXS2JpAXcc" class="video-embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <img src="../../img/How_to_dance2.JPG" alt="How to Dance Confidently" class="main-image" style="cursor: pointer;" onclick="openLightbox(this)">
                 <p class="image-caption">‘How To Dance Confidently is my final year animation project in media & communications at Goldsmiths!
 
                     Dancing is seen as the quickest route to joy, but for many people that route can get a little confusing.
@@ -33,8 +36,8 @@
                     But if you stick around and give it another chance you might just learn how to dance confidently and reach a sense of profound joy and happiness.
                     
                     Drawing on ancient philosophies and contemporary critical theory, this animated tutorial seeks to reveal the life-enhancing qualities of dance in order to help us overcome dancefloor anxiety.</p>
-                <iframe src="https://www.youtube.com/embed/BfXS2JpAXcc" class="video-embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
+            <script>function openLightbox(img){var lb=document.getElementById('lightbox');var lbImg=document.getElementById('lightbox-img');lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('open');lb.setAttribute('aria-hidden','false');}</script>
         </main>
     </div>
 </body>
